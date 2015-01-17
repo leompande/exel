@@ -2,7 +2,7 @@
  * Created by leo on 1/15/15.
  */
 /**
- * <script src="/exel/js/handsontable.full.js"></script><script src="/exel/dropDownTables.js"></script><script src="/exel/wardMontlyEntryFormConfigurations.js"></script><script src="/exel/slaughtaredAnimals.js"></script>
+ * <script src="/exel/js/handsontable.full.js"></script><script src="/exel/dropDownTableGenerator.js"></script><script src="/exel/wardMontlyEntryFormConfigurations.js"></script><script src="/exel/slaughtaredAnimals.js"></script>
  *
  * */
 
