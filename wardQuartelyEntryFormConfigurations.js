@@ -33,6 +33,39 @@ dataEventResource("parent_kemikali_container","kemikali_container",programKemika
 
 
 
+var programUmwagiliaji = "V8tLhRm35cD";
+var dataElementUIdsUmwagiliaji = ['','ua8t910KDwq','w03rfpPSOxO','FtpehJLcD89','j5XQ5uFTx4n','E05PhcRTZFK','vcCK3NPZ4xm','W0PdgUM7JWB'];
+var headersUmwagiliaji = ['','Aina ya Mazao(i)','Eneo lililopandwa(ha)(ii) </br>Masika/Vuli(iv)','Eneo lililopandwa(ha)(ii) </br>Kiangazi','Uzalishaji/Tija(tani/ha)(iii)</br>Masika/Vuli','Uzalishaji/Tija(tani/ha)(iii)</br>Kiangazi','Mavuno (tani)(iv)=(ii)x(iii)</br>Masika/Vuli(viii)','Mavuno (tani)(iv)=(ii)x(iii)</br>Masika/Vuli(ix)'],
+    affectedUmwagiliaji = ['','Mahindi	Mahindi','Mpunga','Mtama','Uwele','Ulezi','Ngano','Shayiri','Mihogo','Viazi vitamu','Viazi mviringo','Viazi vikuu','Gimbi','Pamba','Tumbaku','Kahawa','Chai','Pareto','Kakao','Mpira',
+    'Miwati','Miwa','Jute','Katani','Korosho','Alizeti','Ufuta','Karanga','Mawese','Nazi','Maharage ya Soya','Mbegu za nyonyo','Mibono','Kunde','Mbaazi','Choroko','Njegere','Dengu','Njugu mawe',
+    'Maharage','Tangawizi','Pilipili manga','Giligilani','Mdalasini','Binzari','Vanila','Pilipili kali','Karafuu','Vitunguu swaumu','Iliki','Paprika',
+    'Matango','Uy\'oga','Cauliflower','Kabichi','Mchicha','Spinachi','Kabichi china(Chinese cabbage)','Nyanya','Biringanya','Vitunguu','Pilipili hoho','Karoti',
+    'Nyanya chungu','Mnafu','Figiri','Leek','Saladi','Bamia','Ndizi mbivu (sweet banana)','Ndizi mbichi (plantain)','Embe','Papai','Chungwa','Chenza','Pera',
+    'Apple','Nanasi','Parachichi','Tikiti maji','Limau','Ndimu','Tunda damu','Mapeasi','Mapensheni(Passion fluit)','Waridi(Rose)','Chrysanthemum','Camation',
+    'Aster','Gypsophylla','Ginger rose','Helianthus','Choya(Rozella)','Others'];
+columConfigurationsUmwagiliaji= [{readOnly: true},{type: 'dropdown',source: affectedUmwagiliaji},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'}];
+dataEventResource("parent_umwagiliaji_container","umwagiliaji_container",programUmwagiliaji,window.orgUnit,window.dataSet,window.period,dataElementUIdsUmwagiliaji,headersUmwagiliaji,columConfigurationsUmwagiliaji);
+
+
+
+
+
+
+var programMmomonyoko = "JtnHRSFhC5e";
+var dataElementUIdsmmomonyoko = ['','uEtHzkz12Mh','ua8t910KDwq','gMnAGCPi4oc','cuTNA7qZYUM','e2WtxFQVnve','ZH0t98IGHTL'];
+var headersMmomonyoko = ['','Aina ya Mmomonyoko(i)','Jina la kijiji/Vijiji vilivyohusika','Eneo lililohalibiwa (ha)','Mbinu zilizo tumika','Eneo lililo karabatiwa (ha)','Maelezo'],
+    affectedMmomonyoko = ['','Mahindi	Mahindi','Mpunga','Mtama','Uwele','Ulezi','Ngano','Shayiri','Mihogo','Viazi vitamu','Viazi mviringo','Viazi vikuu','Gimbi','Pamba','Tumbaku','Kahawa','Chai','Pareto','Kakao','Mpira',
+        'Miwati','Miwa','Jute','Katani','Korosho','Alizeti','Ufuta','Karanga','Mawese','Nazi','Maharage ya Soya','Mbegu za nyonyo','Mibono','Kunde','Mbaazi','Choroko','Njegere','Dengu','Njugu mawe',
+        'Maharage','Tangawizi','Pilipili manga','Giligilani','Mdalasini','Binzari','Vanila','Pilipili kali','Karafuu','Vitunguu swaumu','Iliki','Paprika',
+        'Matango','Uy\'oga','Cauliflower','Kabichi','Mchicha','Spinachi','Kabichi china(Chinese cabbage)','Nyanya','Biringanya','Vitunguu','Pilipili hoho','Karoti',
+        'Nyanya chungu','Mnafu','Figiri','Leek','Saladi','Bamia','Ndizi mbivu (sweet banana)','Ndizi mbichi (plantain)','Embe','Papai','Chungwa','Chenza','Pera',
+        'Apple','Nanasi','Parachichi','Tikiti maji','Limau','Ndimu','Tunda damu','Mapeasi','Mapensheni(Passion fluit)','Waridi(Rose)','Chrysanthemum','Camation',
+        'Aster','Gypsophylla','Ginger rose','Helianthus','Choya(Rozella)','Others'];
+columConfigurationsMmomonyoko= [{readOnly: true},{type: 'dropdown',source: affectedMmomonyoko },{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'}];
+dataEventResource("parent_mmomonyoko_container","mmomonyoko_container",programMmomonyoko,window.orgUnit,window.dataSet,window.period,dataElementUIdsmmomonyoko,headersMmomonyoko,columConfigurationsMmomonyoko);
+
+
+
 
 /** if changed Administrative unnit**/
 var AdminUnit = function(){

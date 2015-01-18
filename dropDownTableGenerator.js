@@ -359,7 +359,7 @@ function preparedColumnWidths(dataElementUIds){
          widthsArray.push(1);
         }else{
             // this handle the with of the lest of the columns
-           widthsArray.push(144);
+           widthsArray.push(200);
         }
     }
 
@@ -449,15 +449,3 @@ function trackeSelectionsChangesGlobally(){
 
 }
 
-
-function checkNetConnection(){
-    jQuery.ajaxSetup({async:false});
-    re="";
-    r=Math.round(Math.random() * 10000);
-    $.get("http://yoursite.com/somefile.png",{subins:r},function(d){
-        re=true;
-    }).error(function(){
-        re=false;
-    });
-    return re;
-}
