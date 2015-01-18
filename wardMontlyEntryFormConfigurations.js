@@ -1,26 +1,17 @@
 
-if(dhis2.de.currentOrganisationUnitId){	
-	window.orgUnit = dhis2.de.currentOrganisationUnitId;
-	}
-if(dhis2.de.currentDataSetId){
-	
-	window.dataSet = dhis2.de.currentDataSetId;
-	}
-if($("#selectedPeriodId :selected").val()){
-	
-	window.period  = $("#selectedPeriodId :selected").val();
-	}
-
-
-
 		/***
 		 * 
-		 * TESTING OUR FUNCTION FOR ONE TABLE PARAMETERS
+		 * Re using tables fumction
 		 * 
 		 * 
 		 *
 		 */
-			var programKemikali = "AQQj1mfXjPD";			
+            /**
+             * Track changes
+             * **/
+            trackeSelectionsChangesGlobally();
+
+ 			var programKemikali = "AQQj1mfXjPD";
 			var dataElementUIdsKemikali = ['','fxddwVskpX0','m1zhpRKwAJa','jAPsjU8L10X','ZlQTZV0QVEX','BH9v8zsf48O','rMEX3mx0FsU','AZhg3H7UH5T','dk5G5GP4Z27','Ai8EZdUMcJA','vayGIDYy4sf','N1xjnidYe6O','ZH0t98IGHTL'];
 			var headersKemikali = ['','Jina la ugonjwa </br>/ kisumbufu </br>(i)','Zao lililoathirika</br> (ii)','Kiasi cha uharibifu</br> (Kidogo ,Wastan,Kubwai)','Eneo lililoathiriwa</br> (ha)(iv)','Idadi ya vijiji</br> vilivyoathirika</br> (v)','Dawa iliyotumika </br>(vi)','Kiasi cha dawa','Kipimo(Kg/Litre)','Idadi ya vijiji </br>vilivyo hudumiwa</br> (ix)','Idadi ya kaya </br>zilizo hudumiwa</br> (xi)','Eneo liliookolewa</br>(ha)(xi)','Maelezo</br>(xii)'],
 				deseaseName = ['','American ball worm','Aphids','Amyworm','Bean flies','Bean Flower Thrips','Bean leaf beetle','Bean looper'],

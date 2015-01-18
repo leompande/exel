@@ -109,11 +109,7 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
 
 
                     var container = document.getElementById(Programs[indexCounter]['container'])
-                    var greenRenderer = function (instance, td, row, col, prop, value, cellProperties) {
-                        Handsontable.renderers.TextRenderer.apply(this, arguments);
-                        td.style.backgroundColor = 'green';
-
-                    };
+                console.log(Programs[indexCounter]['data']);
                     hot1 = new Handsontable(container, {
                         data: Programs[indexCounter]['data'],
                         startCols: 13,
@@ -131,13 +127,6 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                         columns: columConfigurations,
                         afterChange: function (change, source) {
 
-                            this.renderer = greenRenderer;
-
-                            this.addHook('cells', function(row, col, prop) {
-                                if (row === 0 && col === 2) {
-                                    this.renderer = greenRenderer;
-                                }
-                            });
 
                             if (source == "edit") {
                                 /**
@@ -158,7 +147,7 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                 console.log(change[0][0]);
                                 console.log(ChangedRowData);
                                 console.log(ChangedRowData[0]);
-                                if (ChangedRowData[0] != null) {
+                                if (typeof ChangedRowData[0] != 'undefined') {
                                     ///checking if it is first event registry or update
 
                                     var dataValuesArray = [];/// Preparing data for updating event
@@ -182,7 +171,6 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                      * */
                                     dataValuesArray.push({"dataElement": dataSetUID, "value": dataset});///adding dataset
                                     dataValuesArray.push({"dataElement": periodUID, "value": period});///adding period
-
 
                                     /**
                                      *
@@ -217,7 +205,6 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                 }else{
 
                                     ///// This is first time entry
-
                                     var dataValuesArray = [];/// Preparing data for saving new event
                                     var addedDataElement = dataElementUIds[change[0][1]];
                                     var newValue = change[0][3];
@@ -236,6 +223,9 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                     dataValuesArray.push({"dataElement": dataSetUID, "value": dataset});///adding dataset
                                     dataValuesArray.push({"dataElement": periodUID, "value": period});///adding period
 
+                                    console.log("Dataset: "+dataset);
+                                    console.log("Period"+period);
+                                    console.log(dataValuesArray);
 
                                     /**
                                      *
@@ -267,6 +257,8 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                         //
                                         //    }
                                         //}, 100);
+
+                                        secondTime = true;
                                     });
 
 
@@ -435,4 +427,37 @@ $.EventJsonPut = function (url, data, callback) {
 function eventDateFormat() {
     var today = new Date();
     return today.toISOString();
+}
+
+
+function trackeSelectionsChangesGlobally(){
+
+    if(dhis2.de.currentOrganisationUnitId){
+        window.orgUnit = dhis2.de.currentOrganisationUnitId;
+    }
+    if(dhis2.de.currentDataSetId){
+
+        window.dataSet = dhis2.de.currentDataSetId;
+    }
+    if($("#selectedPeriodId :selected").val()){
+
+        window.period  = $("#selectedPeriodId :selected").val();
+    }
+
+
+
+
+}
+
+
+function checkNetConnection(){
+    jQuery.ajaxSetup({async:false});
+    re="";
+    r=Math.round(Math.random() * 10000);
+    $.get("http://yoursite.com/somefile.png",{subins:r},function(d){
+        re=true;
+    }).error(function(){
+        re=false;
+    });
+    return re;
 }
