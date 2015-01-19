@@ -6,10 +6,9 @@
  * Track selection changes
  * **/
 trackeSelectionsChangesGlobally();
-console.log(window.period);
 
-var programKemikali = "JtnHRSFhC5e";
-var dataElementUIdsKemikali = ['','uEtHzkz12Mh','ua8t910KDwq','gMnAGCPi4oc','cuTNA7qZYUM','e2WtxFQVnve','ZH0t98IGHTL','vcCK3NPZ4xm','W0PdgUM7JWB'];
+var programKemikali = "ON9LwVMbryZ";
+var dataElementUIdsKemikali = ['','uEtHzkz12Mh','ua8t910KDwq','gMnAGCPi4oc','cuTNA7qZYUM','e2WtxFQVnve','ZH0t98IGHTL'];
 var headersKemikali = ['','Aina ya ugonjwa </br>/ kisumbufu </br>(i)','Aina ya zao','Njia zilizo tumika','Eneo lililodhibitiwa(ha)','Kaya zilizo husika','Maelezo'],
     deseaseName = ['','American ball worm','Aphids','Amyworm','Bean flies','Bean Flower Thrips','Bean leaf beetle','Bean looper','Black bean aphid','Bruchids','Caterpillers',
         'Corn earworms','Cut worm','Flower beetles','Foliage beetles','Giant coreid bug','Giant beetle','Green aphids','Green leaf hoppers','Green stink bug','Harvester termites',

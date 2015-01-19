@@ -116,8 +116,8 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                         minSpareRows: 1,
                         startRows: 1,
                         rowHeaders: false,
-                        colWidths:preparedColumnWidths(dataElementUIds),
-                        rowHeights: preparedRowHeights(),
+                        //colWidths:preparedColumnWidths(dataElementUIds),
+                        //rowHeights: preparedRowHeights(),
                         colHeaders: headers,
                         columnSorting: {
                             column: 0,
@@ -140,14 +140,10 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                  * window.data[change[0][0]][0] give value of the cell changed
                                  *
                                  * */
-                                   var ChangedRowData =  this.getDataAtRow(change[0][0]);
+                                var ChangedRowData =  this.getDataAtRow(change[0][0]);
 
                                  var eventDate = null;
-                                console.log(change);
-                                console.log(change[0][0]);
-                                console.log(ChangedRowData);
-                                console.log(ChangedRowData[0]);
-                                if (typeof ChangedRowData[0] != 'undefined') {
+                                if (ChangedRowData[0] != null) {
                                     ///checking if it is first event registry or update
 
                                     var dataValuesArray = [];/// Preparing data for updating event
@@ -156,10 +152,6 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                     var changedDataElement = dataElementUIds[change[0][1]];
                                     var newValue = change[0][3];
                                     var eventDate = FirstColumn[0];
-                                    console.log(changedEvent);
-                                    console.log(newValue);
-                                    console.log(changedDataElement );
-                                    console.log(eventDate);
 
                                     dataValuesArray.push({
                                         "dataElement": changedDataElement,
@@ -171,7 +163,7 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                      * */
                                     dataValuesArray.push({"dataElement": dataSetUID, "value": dataset});///adding dataset
                                     dataValuesArray.push({"dataElement": periodUID, "value": period});///adding period
-
+                                    console.log(dataValuesArray);
                                     /**
                                      *
                                      * Assembling the Event object
@@ -203,6 +195,7 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
 
 
                                 }else{
+                                    var ChangedRowData =  this.getDataAtRow(change[0][0]);
 
                                     ///// This is first time entry
                                     var dataValuesArray = [];/// Preparing data for saving new event
