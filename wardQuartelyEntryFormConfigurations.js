@@ -33,7 +33,7 @@ dataEventResource("parent_kemikali_container","kemikali_container",programKemika
 
 
 var programUmwagiliaji = "V8tLhRm35cD";
-var dataElementUIdsUmwagiliaji = ['','ua8t910KDwq','w03rfpPSOxO','FtpehJLcD89','j5XQ5uFTx4n','E05PhcRTZFK','vcCK3NPZ4xm','W0PdgUM7JWB'];
+var dataElementUIdsUmwagiliaji = ['','ua8t910KDwq','w03rfpPSOxO','FtpehJLcD89','j5XQ5uFTx4n','E05PhcRTZFK','kKD6MJR55AP','evnRscGbc58'];
 var headersUmwagiliaji = ['','Aina ya Mazao(i)','Eneo lililopandwa(ha)(ii) </br>Masika/Vuli(iv)','Eneo lililopandwa(ha)(ii) </br>Kiangazi','Uzalishaji/Tija(tani/ha)(iii)</br>Masika/Vuli','Uzalishaji/Tija(tani/ha)(iii)</br>Kiangazi','Mavuno (tani)(iv)=(ii)x(iii)</br>Masika/Vuli(viii)','Mavuno (tani)(iv)=(ii)x(iii)</br>Masika/Vuli(ix)'],
     affectedUmwagiliaji = ['','Mahindi	Mahindi','Mpunga','Mtama','Uwele','Ulezi','Ngano','Shayiri','Mihogo','Viazi vitamu','Viazi mviringo','Viazi vikuu','Gimbi','Pamba','Tumbaku','Kahawa','Chai','Pareto','Kakao','Mpira',
     'Miwati','Miwa','Jute','Katani','Korosho','Alizeti','Ufuta','Karanga','Mawese','Nazi','Maharage ya Soya','Mbegu za nyonyo','Mibono','Kunde','Mbaazi','Choroko','Njegere','Dengu','Njugu mawe',
@@ -50,8 +50,8 @@ dataEventResource("parent_umwagiliaji_container","umwagiliaji_container",program
 
 
 
-var programMmomonyoko = "JtnHRSFhC5e";
-var dataElementUIdsmmomonyoko = ['','uEtHzkz12Mh','ua8t910KDwq','gMnAGCPi4oc','cuTNA7qZYUM','e2WtxFQVnve','ZH0t98IGHTL'];
+var programMmomonyoko = "SefQmQrUQjQ";
+var dataElementUIdsmmomonyoko = ['','r8KABLTN2Xw','nWuqBQxjRLa','lueYliTfGAz','ODweTr4uyfV','lc6DqdaH13G','ZH0t98IGHTL'];
 var headersMmomonyoko = ['','Aina ya Mmomonyoko(i)','Jina la kijiji/Vijiji vilivyohusika','Eneo lililohalibiwa (ha)','Mbinu zilizo tumika','Eneo lililo karabatiwa (ha)','Maelezo'],
     affectedMmomonyoko = ['','Mahindi	Mahindi','Mpunga','Mtama','Uwele','Ulezi','Ngano','Shayiri','Mihogo','Viazi vitamu','Viazi mviringo','Viazi vikuu','Gimbi','Pamba','Tumbaku','Kahawa','Chai','Pareto','Kakao','Mpira',
         'Miwati','Miwa','Jute','Katani','Korosho','Alizeti','Ufuta','Karanga','Mawese','Nazi','Maharage ya Soya','Mbegu za nyonyo','Mibono','Kunde','Mbaazi','Choroko','Njegere','Dengu','Njugu mawe',
@@ -60,7 +60,7 @@ var headersMmomonyoko = ['','Aina ya Mmomonyoko(i)','Jina la kijiji/Vijiji viliv
         'Nyanya chungu','Mnafu','Figiri','Leek','Saladi','Bamia','Ndizi mbivu (sweet banana)','Ndizi mbichi (plantain)','Embe','Papai','Chungwa','Chenza','Pera',
         'Apple','Nanasi','Parachichi','Tikiti maji','Limau','Ndimu','Tunda damu','Mapeasi','Mapensheni(Passion fluit)','Waridi(Rose)','Chrysanthemum','Camation',
         'Aster','Gypsophylla','Ginger rose','Helianthus','Choya(Rozella)','Others'];
-columConfigurationsMmomonyoko= [{readOnly: true},{type: 'dropdown',source: affectedMmomonyoko },{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'},{type: 'numeric'}];
+columConfigurationsMmomonyoko= [{readOnly: true},{type: 'dropdown',source: affectedMmomonyoko },{type: 'text'},{type: 'numeric'},{type: 'text'},{type: 'numeric'},{type: 'text'}];
 dataEventResource("parent_mmomonyoko_container","mmomonyoko_container",programMmomonyoko,window.orgUnit,window.dataSet,window.period,dataElementUIdsmmomonyoko,headersMmomonyoko,columConfigurationsMmomonyoko);
 
 

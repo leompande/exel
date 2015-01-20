@@ -108,16 +108,15 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                     ///console.log(Programs[indexCounter]['data']);
 
 
-                    var container = document.getElementById(Programs[indexCounter]['container'])
-                console.log(Programs[indexCounter]['data']);
+                    var container = document.getElementById(Programs[indexCounter]['container']);
                     hot1 = new Handsontable(container, {
                         data: Programs[indexCounter]['data'],
                         startCols: 13,
                         minSpareRows: 1,
                         startRows: 1,
                         rowHeaders: false,
-                        //colWidths:preparedColumnWidths(dataElementUIds),
-                        //rowHeights: preparedRowHeights(),
+                        colWidths:preparedColumnWidths(dataElementUIds),
+                        rowHeights: preparedRowHeights(),
                         colHeaders: headers,
                         columnSorting: {
                             column: 0,
@@ -125,6 +124,20 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                         },
                         contextMenu:['row_above', 'row_below', 'remove_row'],
                         columns: columConfigurations,
+                        cells: function (row, col, prop) {
+                            var cellProperties = {};
+
+                            if (col === 0 || this.instance.getData()[row][col] === 'readOnly') {
+                                cellProperties.readOnly = true; //make cell read-only if it is first row or the text reads 'readOnly'
+                            }
+                            if (col === 0) {
+                                cellProperties.renderer = colorFirstColuimn; //uses function directly
+                            }
+                            //if (row === 0) {
+                            //    cellProperties.renderer = colorFirstRow; //uses function directly
+                            //}
+                            return cellProperties;
+                        },
                         afterChange: function (change, source) {
 
 
@@ -239,7 +252,7 @@ function dataEventResource(parentContainerId, containerId, program, orgUnit, dat
                                     $.EventJsonPost('../api/events', dhis2Event, function (response) {
                                         cloneInstance.setDataAtCell(change[0][0],0,preparedId(eventDate,response));
                                         ////$(container).remove();//Wipe the old table from div
-                                        //$(parentContainer).remove("#" + containerId).append("<div id='" + containerId + "'></div>");
+                                       $(parentContainer).remove("#" + containerId).append("<div id='" + containerId + "'></div>");
                                         //
                                         //var poller = window.setInterval(function () {
                                         //    var container = document.getElementById(containerId);
@@ -352,7 +365,7 @@ function preparedColumnWidths(dataElementUIds){
          widthsArray.push(1);
         }else{
             // this handle the with of the lest of the columns
-           widthsArray.push(200);
+           widthsArray.push(100);
         }
     }
 
@@ -374,7 +387,7 @@ function preparedRowHeights(){
     var expectedLengthOfArray = 400;
     for(var index = 0;index<expectedLengthOfArray;index++){
             // checking if is the first element and fix the height to 34px
-            heighsArray.push(36);
+           heighsArray.push(36);
 
     }
     return heighsArray;
@@ -424,14 +437,17 @@ function eventDateFormat() {
 
 
 function trackeSelectionsChangesGlobally(){
+   /// dhis2.dsr.currentOrganisationUnitId
+    if(dhis2.de.currentOrganisationUnitId != null){
 
-    if(dhis2.de.currentOrganisationUnitId){
         window.orgUnit = dhis2.de.currentOrganisationUnitId;
     }
-    if(dhis2.de.currentDataSetId){
+
+    if(dhis2.de.currentDataSetId != null){
 
         window.dataSet = dhis2.de.currentDataSetId;
     }
+
     if($("#selectedPeriodId :selected").val()){
 
         window.period  = $("#selectedPeriodId :selected").val();
@@ -439,6 +455,25 @@ function trackeSelectionsChangesGlobally(){
 
 
 
+
+}
+
+
+function colorFirstColuimn(instance, td, row, col, prop, value, cellProperties){
+    var backgroundColoor = "#ffffff";
+    var color            = "#ffffff";
+
+    Handsontable.renderers.TextRenderer.apply(this, arguments);
+    td.style.color = color;
+    td.style.background = backgroundColoor;
+
+}
+
+function colorFirstRow(instance, td, row, col, prop, value, cellProperties){
+    var backgroundColoor = "#ffffff";
+
+    Handsontable.renderers.TextRenderer.apply(this, arguments);
+    td.style.background = backgroundColoor;
 
 }
 
